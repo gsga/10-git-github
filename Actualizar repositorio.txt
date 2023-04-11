@@ -1,0 +1,51 @@
+Es importante saber en qué rama te encuentras antes de realizar cualquier operación en Git, ya que las operaciones de Git se realizan en la rama actual a menos que se especifique lo contrario.
+
+PARA SABER EN QUÉ RAMA ESTOY
+
+Para saber en qué rama te encuentras en Git, puedes utilizar el comando git branch en la terminal. Este comando muestra todas las ramas locales disponibles en tu repositorio local y marca con un asterisco la rama actual.
+
+El comando git branch por sí solo mostrará la lista de ramas locales disponibles en tu repositorio local:
+
+	$ git branch
+	  branch-1
+	  branch-2
+	* main
+	  branch-3
+	  
+En este ejemplo, la rama actual es main, ya que tiene un asterisco junto a su nombre.
+
+También puedes utilizar el comando git status para ver el estado actual de tu rama y cualquier cambio pendiente en tu repositorio local:
+
+	$ git status
+	On branch main
+	Your branch is up-to-date with 'origin/main'.
+	nothing to commit, working tree clean
+
+En este ejemplo, el comando git status muestra que la rama actual es main y que no hay cambios pendientes en tu repositorio local.
+
+ACTUALIZAR MI COPIA LOCAL
+
+Para actualizar tu copia local de un repositorio en GitHub, puedes seguir estos pasos:
+
+	1 Abre una terminal y ubícate en el directorio que contiene tu repositorio local.
+	
+	2 Verifica si tienes cambios pendientes en tu rama actual usando el comando git status. Si tienes cambios pendientes, es recomendable que los commitees o los descartes antes de actualizar tu copia local.
+	
+	3 Actualiza tu copia local de la rama principal (por ejemplo, "main" o "master") usando el comando git pull. Esto descargará las actualizaciones más recientes desde el repositorio remoto de GitHub a tu repositorio local.
+	
+	4 Si tienes ramas locales que no se han fusionado con la rama principal actualizada, puedes fusionarlas usando el comando git merge <nombre-de-la-rama>. Esto te permitirá actualizar tus ramas locales con las actualizaciones más recientes de la rama principal.
+
+Si quieres actualizar solo una rama específica y no todas las ramas locales, puedes usar el comando git pull origin <nombre-de-la-rama> en lugar de git pull.
+
+Con estos pasos, deberías poder actualizar tu copia local con solo lo que te falta y mantener lo que está actualizado en el repositorio de GitHub.
+
+DESCARTAR LOS CAMBIOS LOCALES PENDIENTES
+
+Para descartar los cambios locales pendientes en Git, puedes utilizar el comando git checkout -- <nombre-del-archivo> para restaurar los archivos modificados a la última versión confirmada del repositorio.
+
+Si deseas descartar todos los cambios realizados y volver al estado anterior al último commit, puedes usar el comando git reset --hard HEAD.
+
+Ten en cuenta que este comando descarta todos los cambios locales pendientes y los reemplaza por la última versión confirmada en el repositorio. Por lo tanto, es recomendable tener una copia de seguridad de tus cambios si hay algo importante que desees guardar.
+
+Si has confirmado algunos cambios y deseas deshacerlos, puedes usar el comando git revert <hash-del-commit> para crear un nuevo commit que revierta los cambios realizados en un commit específico. De esta manera, podrás mantener un registro del historial de cambios del repositorio sin perder los cambios importantes.
+
